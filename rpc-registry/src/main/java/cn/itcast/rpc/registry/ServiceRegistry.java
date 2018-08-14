@@ -36,6 +36,7 @@ public class ServiceRegistry {
 	public void register(String data) {
 		if (data != null) {
 			ZooKeeper zk = connectServer();
+			System.out.println("zk is" + zk);
 			if (zk != null) {
 				createNode(zk, data);
 			}
@@ -82,6 +83,7 @@ public class ServiceRegistry {
 			String path = zk.create(Constant.ZK_DATA_PATH, bytes,
 					Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL_SEQUENTIAL);
 			LOGGER.debug("create zookeeper node ({} => {})", path, data);
+			System.out.println("path"+path+"data"+ data );
 		} catch (Exception e) {
 			LOGGER.error("", e);
 		}
