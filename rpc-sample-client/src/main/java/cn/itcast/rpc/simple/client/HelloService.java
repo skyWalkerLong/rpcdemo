@@ -4,5 +4,5 @@ public interface HelloService {
 
     String hello(String name);
 
-    String hello(Person person);
+    String hello1(Person person);
 }

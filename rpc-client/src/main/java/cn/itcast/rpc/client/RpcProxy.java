@@ -47,6 +47,7 @@ public class RpcProxy {
 						request.setMethodName(method.getName());
 						request.setParameterTypes(method.getParameterTypes());
 						request.setParameters(args);
+						System.out.println(request);
 						//查找服务
 						if (serviceDiscovery != null) {
 							serverAddress = serviceDiscovery.discover();
